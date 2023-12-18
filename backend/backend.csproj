@@ -12,10 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Context\" />
-    <Folder Include="Controllers\DTOS\" />
-    <Folder Include="Controllers\Entities\" />
-    <Folder Include="Controllers\Enums\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Core\Dtos\" />
+    <Folder Include="Core\AutoMapperConfig\" />
+    <Folder Include="Core\Context\" />
   </ItemGroup>
 
 </Project>
