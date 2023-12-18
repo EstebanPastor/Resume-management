@@ -4,6 +4,7 @@ using backend.Core.Dtos.Candidate;
 using backend.Core.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers
 {
@@ -44,6 +45,17 @@ namespace backend.Controllers
             await _context.SaveChangesAsync();
 
             return Ok("Candidate saved successfully");
+        }
+
+        [HttpGet]
+        [Route ("Get")]
+
+        public async Task<ActionResult<IEnumerable<CandidateGetDto>>> GetCandidates()
+        {
+            var candidates = await _context.Candidates.Include(c => c.Job).ToListAsync();
+            var convertedCandidates = _mapper.Map<IEnumerable<CandidateGetDto>>(candidates);
+
+            return Ok(convertedCandidates);
         }
 
     }
