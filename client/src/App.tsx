@@ -5,10 +5,13 @@ import NavBar from "./components/ui/navbar/NavBar";
 import CustomLinearProgress from "./components/ui/linear-progress/CustomLinearProgress";
 
 
+
 const Home = lazy(() => import("./pages/home/Home"));
 const Companies = lazy(() => import("./pages/companies/Companies"));
 const AddCompany = lazy(() => import("./pages/companies/AddCompany"));
 const Jobs = lazy(() => import("./pages/jobs/Jobs"));
+const AddJob = lazy(() => import("./pages/jobs/AddJob"));
+
 
 function App() {
   const { darkMode } = useContext(ThemeContext);
@@ -28,6 +31,7 @@ function App() {
             </Route>
             <Route path="/jobs">
               <Route index element={<Jobs />} />
+              <Route path="add" element={<AddJob />} />
             </Route>
           </Routes>
         </Suspense>
