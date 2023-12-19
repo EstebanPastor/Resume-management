@@ -4,8 +4,10 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/ui/navbar/NavBar";
 import CustomLinearProgress from "./components/ui/linear-progress/CustomLinearProgress";
 
+
 const Home = lazy(() => import("./pages/home/Home"));
 const Companies = lazy(() => import("./pages/companies/Companies"));
+const AddCompany = lazy(() => import("./pages/companies/AddCompany"));
 
 function App() {
   const { darkMode } = useContext(ThemeContext);
@@ -21,6 +23,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/companies">
               <Route index element={<Companies />} />
+              <Route path="add" element={<AddCompany />} />
             </Route>
           </Routes>
         </Suspense>
