@@ -38,7 +38,7 @@ Getting Started
 
     bash
 
-git clone https://github.com/your-username/resume-management-system.git](https://github.com/EstebanPastor/Resume-management
+git clone https://github.com/EstebanPastor/Resume-management
 
 Navigate to the project folder:
 
